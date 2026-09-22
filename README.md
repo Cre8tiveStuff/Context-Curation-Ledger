@@ -21,10 +21,10 @@ Built directly on verified findings from Gupte et al. (2025), tested against `ll
 
 | Component | Purpose | Status |
 |---|---|---|
-| `count_tokens()` | Real token measurement, not word-count guessing | 🚧 Not yet built |
-| `fit_to_budget()` | Prune retrieved chunks to a real, measured ceiling | ⬜ Not started |
-| Position-aware ordering | Place highest-relevance chunks first/last, not buried mid-context | ⬜ Not started |
-| Baseline vs. curated comparison logging | The actual proof — pruned and unpruned outcomes, scored and compared | ⬜ Not started |
+| `count_tokens()` | Real token measurement, not word-count guessing | ✅ Built, tested |
+| `fit_to_budget()` | Prune retrieved chunks to a real, measured ceiling | ✅ Built, tested |
+| `position_aware_order()` | Place highest-relevance chunks first/last, not buried mid-context | ✅ Built, tested |
+| `comparison_log.py` | The actual proof — pruned and unpruned outcomes, scored and compared | ✅ Built, tested |
 
 ## Related projects
 
