@@ -1,5 +1,6 @@
 from ccl import count_tokens
 from ccl import fit_to_budget
+from ccl import position_aware_order
 
 def test_count_tokens_returns_positive_int():
     result = count_tokens("This is a test sentence.")
@@ -22,4 +23,19 @@ def test_fit_budget_stops_at_limit():
 def test_fit_to_budget_keeps_all_under_budget():
     chunks = ["short_chunk"] * 3
     result = fit_to_budget(chunks, max_tokens=1000)
-    assert len(result) == 3 
+    assert len(result) == 3
+
+def test_position_aware_order_puts_top_chunk_first():
+    ranked = ["best", "second", "third", "fourth", "worst"]
+    result = position_aware_order(ranked)
+    assert result[0] == "best"
+
+def test_position_aware_order_puts_second_chunk_last():
+    ranked = ["best", "second", "third", "fourth", "worst"]
+    result = position_aware_order(ranked)
+    assert result[-1] == "second"
+
+def test_position_aware_order_short_list_unchanged():
+    ranked = ["only_one"]
+    result = position_aware_order(ranked)
+    assert result == ["only_one"]
