@@ -26,10 +26,14 @@ Built directly on verified findings from Gupte et al. (2025), tested against `ll
 | `position_aware_order()` | Place highest-relevance chunks first/last, not buried mid-context | ✅ Built, tested |
 | `comparison_log.py` | The actual proof — pruned and unpruned outcomes, scored and compared | ✅ Built, tested |
 
+## In Production
+
+As of the latest commit, CCL is genuinely wired into procurement-rag's query_vector_store() output via curate_chunks(), and verified working end-to-end inside O2A's live agent test — not just tested in isolation, proven inside the real, running system it was built for.
+
 ## Related projects
 
 - [O2A: Observability, Orchestration, Agent](https://github.com/Cre8tiveStuff/O2A-Observability-Orchestration-Agent) — the agent this context ultimately reaches
-- [procurement-rag](https://github.com/Cre8tiveStuff/procurement-rag) — the retrieval layer CCL sits downstream of
+- [procurement-rag](https://github.com/Cre8tiveStuff/procurement-rag) — the retrieval layer CCL now curates
 - [ARC: Agentic Reasoning Chain](https://github.com/Cre8tiveStuff/ARC-Agentic-Reasoning-Chain) — sibling infrastructure governing *when* work happens; CCL governs *what fits* in a single call
 
 ---
