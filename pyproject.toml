@@ -1,2 +1,18 @@
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "context-curation-ledger"
+version = "0.1.0"
+description = "Measures, prunes, and reorders context before it reaches an LLM, with logged proof"
+requires-python = ">=3.9"
+dependencies = [
+    "tiktoken",
+]
+
+[tool.setuptools]
+py-modules = ["ccl", "comparison_log"]
+
 [tool.pytest.ini_options]
 pythonpath = ["."]
